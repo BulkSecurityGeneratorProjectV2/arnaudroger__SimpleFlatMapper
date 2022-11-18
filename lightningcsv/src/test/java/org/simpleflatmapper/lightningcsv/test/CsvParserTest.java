@@ -18,6 +18,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -477,7 +478,7 @@ public class CsvParserTest {
 
 	
 	private File createTempCsv(String str) throws IOException {
-		File file = File.createTempFile("test", ".csv");
+		File file = Files.createTempFile("test", ".csv").toFile();
 
 		FileWriter writer = new FileWriter(file);
 		try {
